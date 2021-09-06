@@ -1,0 +1,109 @@
+{% extends 'ecommerce/main.html' %}
+{% block title %}Artfort{% endblock %}
+{% block css %}
+.col-md-3
+  {
+  display: inline-block;
+  margin-left:-4px;
+  }
+  .carousel-indicators .active {
+  background-color:#383d41;
+  }
+  {# .col-md-3 img{
+  max-width: 167px;
+  height: 200px;
+  } #}
+  .carousel-indicators li{
+  background-color:#2e6e82;
+  }
+  body .carousel-indicators{
+  bottom: -40px;
+  }
+  body .carousel-control-prev-icon{
+   background-color:#383d41;
+    margin-right: auto;
+    width: 22px;
+    height: 60px;
+}
+  body .carousel-control-next-icon{
+  background-color: #383d41;
+    margin-left: auto;
+    width: 22px;
+    height: 60px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next{
+  top: auto;
+  bottom: auto;
+  margin-top:220px;
+  }
+  body .no-padding{
+  padding-left: 0,
+  padding-right: 0;
+  }
+  .flash-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+	{% for product,range,nSlides in allProd %}
+  <div class="row">
+    <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+        {% for i in range%}
+        <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+        {% endfor %}
+      </ul>
+ {% if forloop.first %}
+      <img src="/static/images/flash.jpg" class="flash-img">
+      {% endif %}
+    <div class="container-fluid carousel-inner no-padding">
+      <div class="carousel-item active">
+      {% for i in product %}
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="card align-items-center">
+          <img src="/static/images/{{i.image}}" class="card-img-top" alt="error">
+          <div class="card-body">
+            <h5 class="card-title" id="namepr{{i.id}}">{{i.sub_category}}</h5>
+          </div>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+    </div><div class="carousel-item">
+      {% endif %}
+      {% endfor %}
+    </div>
+    </div>
+     
+        {% if forloop.first %}
+      <img src="/static/images/watch.jpg" class="flash-img">
+      {% endif %}
+    </div>
+    <a href="#demo{{forloop.counter}}" class="carousel-control-prev" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a href="#demo{{forloop.counter}}" class="carousel-control-next" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+	{% endfor %}
+</div>
+
+
+<div class="footer container-fluid my-3">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card card-body">
+    <h1>this is good</h1>
+  </div>
+    </div> 
+  </div>
+</div>
+{% endblock %}
