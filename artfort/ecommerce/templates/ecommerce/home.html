@@ -115,6 +115,98 @@ button:focus {
     margin: 0 auto;
 }
 
+
+.col-xs-55, .col-sm-55, .col-md-55, .col-lg-55{
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.col-xs-55 {
+    float:left;
+}
+.col-xs-55 {
+    width: 20%
+}
+
+@media (min-width:768px) {
+    .col-sm-55 {
+        float: left
+    }
+    .col-sm-55 {
+        width: 20%
+    }
+}
+
+@media (min-width:992px) {
+    .col-md-55 {
+        float: left
+    }
+    .col-md-55 {
+        width: 20%;
+    }
+}
+
+@media (min-width:1200px) {
+    .col-lg-55 {
+        float: left
+    }
+    .col-lg-55 {
+        width: 20%
+    }
+}
+
+.footer h5 {
+    font-size: 1.0625rem;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    color: #000;
+    margin-bottom:46px;
+    margin-top:69px
+}
+
+.footer a {
+    font-size: 1rem;
+    color: #A5A5A5;
+    letter-spacing: 1.6px;
+   
+    transition: 0.5s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer ul {
+    padding-left:0px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer ul li{
+display: list-item;
+margin-right:10px;
+}
+.footer ul li a{
+background:#E0E0E0;
+display:block;
+padding:6px 8px;
+color:black;
+border-radius:5px;
+}
+.footer ul li a:hover{
+  color:white;
+  background:#4267B2;
+}
+.footerend{
+  background:black;
+  color:white;
+  text-align:center;
+  letter-spacing: 3px;
+  font-weight:bold;
+}
+.footerend p{
+  padding:15px;
+  margin-bottom:0px;
+}
 {% endblock %}
 {% block content %}
 
@@ -191,6 +283,52 @@ guided by an ambition to rise globally as the market leader in high-end retail.<
   </div>
     </div>
     </div>
+    <div class="footer">
+    <div class="container">
+      <div class="row">
+   <div class="col">
+      <h5>Company</h5>
+      <a href="" target="_blank"><p>About Us</p></a>
+      <a href="" target="_blank"><p>Contact Us</p></a>
+      <ul>  
+        <li><a href=" "><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href=" "><i class="fab fa-instagram"></i></a></li></ul>
+   </div>
+   <div class="col">
+       <h5>Information</h5>
+      <a href="" target="_blank"><p>Exchange & Return</p></a>
+      <a href="" target="_blank"><p>Size Guide</p></a>
+       <a href="" target="_blank"><p>Loyality Program</p></a>
+      <a href="" target="_blank"><p>Display Centers</p></a>
+       
+   </div>
+   <div class="col">
+      <h5>Legal</h5>
+      <a href="" target="_blank"><p>Privacy Policy</p></a>
+      <a href="" target="_blank"><p>Payment Policy</p></a>
+       <a href="" target="_blank"><p>Shipping Policy</p></a>
+      <a href="" target="_blank"><p>Terms & conditions</p></a>
+   </div>
+   <div class="col">
+    <h5>Service Center</h5>
+      <a href="" target="_blank"><p>09666774577</p></a>
+      <a href="" target="_blank"><p>support@ilyn.global</p></a>
+   </div>
+   <div class="col">
+      <h5>You can pay by</h5>
+      <ul>  
+        <li><i class="fab fa-cc-visa"></i></li>
+        <li><i class="fab fa-cc-mastercard"></i></li>
+        <li><i class="fab fa-cc-amex"></i></li>
+        <li>  </li>
+      </ul>
+   </div>
+      </div>
+    </div>
+    </div>
+    <div class="footerend">
+      <p> &copy2021 ARTFORT. All rights reserved.</p>
+    </div>  
 {% endblock %}
 {% block js %}
 <script>

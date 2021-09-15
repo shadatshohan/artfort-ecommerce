@@ -3,19 +3,80 @@
 .navbg{
   background:rgba(255, 255, 255, 0.6);
 }
+.navbar .navbar-collapse {
+  text-align: center;
+}
+@media (min-width: 992px){
+    .navbar-expand-custom {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .dropdown-menu {
+        position: absolute;
+    }
+    .navbar-expand-custom .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .navbar-expand-custom > .container {
+        flex-wrap: nowrap;
+    }
+    .navbar-expand-custom .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+}
+.submenu{
+  display:flex;
+  justify-content:center;
+  align-items: center
+}
+.subimg{
+   display: flex;
+   justify-content: center;
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+   width:75%;
+}
+.sublast{
+  width:25%;
+}
+.sublast ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.sublast ul li{
+  width:30%;
+}
 </style>
-<div class=" navbg container-fluid">
-  <div class="d-flex justify-content-center mb-2">
-    <img src="{% static 'images/artfort_logo.jpg' %}">
+<div class=" navbg">
+  <div class="submenu">
+    <div class="subimg">
+    <img id="subimgid" src="{% static 'images/artfort_logo.jpg' %}"></div>
+    <div class="sublast">
+      <ul>
+        <li><a href="">search</a></li>
+        <li><a href="">cart</a></li>
+        <li><a href="">add</a></li>
+      </ul>
+    </div>
     
   </div>
-  <div class="d-flex justify-content-center">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-custom navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="justify-content-end navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">New Arrivals</a>
       </li>
@@ -42,5 +103,4 @@
 
 
 </nav>
-</div>
 </div>

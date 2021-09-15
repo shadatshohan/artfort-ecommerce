@@ -3,8 +3,8 @@
 	.mainbg{
 		background:url({% static 'images/leaves.jpg' %});
 		background-size:cover;
-		height: auto !important;
-        min-height: 100%;
+		min-height:100%;
+		 
 	}
 </style>
 <!DOCTYPE html>
@@ -15,10 +15,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.green.css' %}">
-    
+     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     
 
     <title>{%block title%}{%endblock%}</title>
@@ -30,12 +30,10 @@
 <body>
 <div class="mainbg">
 	{%  include 'ecommerce/navbar.html' %}
-	<div class="container-fluid">
 		<p><button class="btn btn-primary">New Arrivals</button></p>
   <p><button class="btn btn-primary">Featured</button></p>
   <p><button class="btn btn-primary">For Sale</button><p/>
 	
-    </div>
 	</div>
 	{% block content %}
 
